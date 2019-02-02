@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+  
+    <div id="container" class="col-xs-6 col-xs-offset-3">
+        
+        <!-- SEARCHING for cars in table -->
+        <div class="row">
+        <h1 style="text-align:center">Simple AJAX CRUDs App</h1>
+        <h3>Search Our Database</h3>
+        <input class='form-control' type="text" name='search' id='search' placeholder='Search our inventory'>
+        <br>
+        <p id="result"></p> <!-- Code coming from search.php with AJAX -->
+        </div>
+
+        <!-- ADDING cars to table -->
+        <div class="row">    
+        <h3>Add a Car</h3>   
+        <form method="POST" id="add-car-form" action="add_cars_to_db.php"> <!-- Code coming from add_cars_to_db.php with AJAX -->
+                <div class="form-group">
+                    <!-- <label for="car-name">Add a Car:</label>  -->
+                    <input type="text" name="car_name" class="form-control" placeholder='Add a car' required>
+                </div>
+            
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+        </form>
+        </div>
+    
+    <br>
+
+        <!-- Cars TABLE - DISPLAYING -->
+        <div class="row">    
+            <h3>Table of Cars</h3>
+            <div class="col-xs-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>
+                    <tbody id="show-cars"> <!--******************-->
+                        <!-- Code coming from display.cars with AJAX -->
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    
+        
+                                                                                            <!-- <div class="name-link"> -->
+        <!-- UPDATE & DELETE buttons -->
+        <div class="col-xs-6">    
+            <div id="action-container">
+                <!-- Code coming from process.php with AJAX -->
+            </div>
+        </div>
+                                                                                            <!-- </div> -->
+
+        
+    </div> <!-- .container -->
+    
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="functions.js"></script>
+
+
+</html>
